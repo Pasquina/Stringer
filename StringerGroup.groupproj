@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F34FBFC4-761F-4E83-8A49-387D7D9F8A32}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestStringer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Stringer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ZStringer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestStringer">
+        <MSBuild Projects="TestStringer.dproj"/>
+    </Target>
+    <Target Name="TestStringer:Clean">
+        <MSBuild Projects="TestStringer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestStringer:Make">
+        <MSBuild Projects="TestStringer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Stringer">
+        <MSBuild Projects="Stringer.dproj"/>
+    </Target>
+    <Target Name="Stringer:Clean">
+        <MSBuild Projects="Stringer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Stringer:Make">
+        <MSBuild Projects="Stringer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZStringer">
+        <MSBuild Projects="ZStringer.dproj"/>
+    </Target>
+    <Target Name="ZStringer:Clean">
+        <MSBuild Projects="ZStringer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZStringer:Make">
+        <MSBuild Projects="ZStringer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestStringer;Stringer;ZStringer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestStringer:Clean;Stringer:Clean;ZStringer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestStringer:Make;Stringer:Make;ZStringer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
