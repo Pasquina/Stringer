@@ -1,3 +1,5 @@
+{ This comment will cause a change to the file. }
+
 library ZStringer;
 
 uses

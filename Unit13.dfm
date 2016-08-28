@@ -13,6 +13,19 @@ object Form13: TForm13
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 222
+    Top = 104
+    Width = 202
+    Height = 19
+    Caption = 'Modified Source 2016-08-27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object Button1: TButton
     Left = 24
     Top = 104
